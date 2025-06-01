@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{Ξ} Covering.Group</title>
+    <link rel="icon" type="image/png" href="assets/covering.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Layout Components */
+        .galaxy {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 250px;
+            max-width: 50vw;
+            height: auto;
+        }
+
+        .center {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: black;
+            font-size: 0.9rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Logo and Animations */
+        .logo {
+            width: 135px;
+            height: 135px;
+            margin-bottom: 0px;
+            animation: spin 10s linear infinite;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin: 10px 0;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: #666;
+            margin: 5px 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Link Styles */
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .footer a {
+            color: #003d82;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .galaxy {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="https://aether.software" aria-label="Visit Aether Software" class="galaxy-link">
+        <img src="assets/galaxy.png" alt="Galaxy background" class="galaxy">
+    </a>
+    
+    <main class="center">
+        <a href="https://aether.software" aria-label="Aether Software Logo" class="logo-link">
+            <img src="assets/aether.svg" alt="Aether Logo" class="logo" id="aether-logo">
+        </a>
+        <h1>
+            <a href="https://aether.software" class="text-link">
+                aether.software
+            </a>
+        </h1>
+        <p class="tagline">The <em>something</em> app.</p>
+    </main>
+
+    <footer class="footer">
+        {Ξ} covering.group | <a href="guide/index.html">about</a>
+    </footer>
+
+    <script>
+        const logo = document.getElementById('aether-logo');
+        const logoLink = document.querySelector('.logo-link');
+        const textLink = document.querySelector('.text-link');
+        const galaxyLink = document.querySelector('.galaxy-link');
+        
+        function switchToCut() {
+            logo.src = 'assets/aether-cut.svg';
+        }
+        
+        function switchToOriginal() {
+            logo.src = 'assets/aether.svg';
+        }
+        
+        // Add hover events to logo
+        logoLink.addEventListener('mouseenter', switchToCut);
+        logoLink.addEventListener('mouseleave', switchToOriginal);
+        
+        // Add hover events to text
+        textLink.addEventListener('mouseenter', switchToCut);
+        textLink.addEventListener('mouseleave', switchToOriginal);
+        
+        // Add hover events to galaxy
+        galaxyLink.addEventListener('mouseenter', switchToCut);
+        galaxyLink.addEventListener('mouseleave', switchToOriginal);
+    </script>
+</body>
+</html>
